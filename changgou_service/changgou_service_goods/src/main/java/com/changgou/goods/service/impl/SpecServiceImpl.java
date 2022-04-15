@@ -1,6 +1,8 @@
 package com.changgou.goods.service.impl;
 
+import com.changgou.goods.dao.CategoryMapper;
 import com.changgou.goods.dao.SpecMapper;
+import com.changgou.goods.pojo.Category;
 import com.changgou.goods.service.SpecService;
 import com.changgou.goods.pojo.Spec;
 import com.github.pagehelper.Page;
@@ -18,6 +20,8 @@ public class SpecServiceImpl implements SpecService {
     @Autowired
     private SpecMapper specMapper;
 
+    @Autowired
+    private CategoryMapper categoryMapper;
     /**
      * 查询全部列表
      * @return
@@ -104,7 +108,7 @@ public class SpecServiceImpl implements SpecService {
         return (Page<Spec>)specMapper.selectByExample(example);
     }
 
-    @Override
+   /* @Override
     public List<Map> findSpecListByCategoryName(String categoryName) {
         List<Map> specList = specMapper.findSpecListByCategoryName(categoryName);
         for (Map map : specList) {
@@ -112,6 +116,12 @@ public class SpecServiceImpl implements SpecService {
             map.put("options",options);
         }
         return specList;
+    }*/
+
+    @Override
+    public List<Map> findSpecListByCategoryId(Integer id) {
+        Category category = categoryMapper.selectByPrimaryKey(id);
+        return specMapper.findSpecListByCategoryId(category.getId());
     }
 
     /**

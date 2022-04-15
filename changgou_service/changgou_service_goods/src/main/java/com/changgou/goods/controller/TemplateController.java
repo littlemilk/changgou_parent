@@ -103,5 +103,10 @@ public class TemplateController {
         return new Result(true,StatusCode.OK,"查询成功",pageResult);
     }
 
+    @GetMapping(value = "/category/{id}")
+    public Result findByCategoryId(@PathVariable Integer id){
+        Template template = templateService.findByCategoryId(id);
+        return new Result(true, StatusCode.OK, "模板查找成功！", template);
+    }
 
 }

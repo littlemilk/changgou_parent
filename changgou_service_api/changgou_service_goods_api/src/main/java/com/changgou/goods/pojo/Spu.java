@@ -13,7 +13,7 @@ import java.io.Serializable;
 public class Spu implements Serializable {
 
 	@Id
-	private String id;//主键
+	private Long id;//主键
 
 
 	
@@ -40,10 +40,10 @@ public class Spu implements Serializable {
 	private String status;//审核状态
 
 	
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

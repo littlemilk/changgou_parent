@@ -64,6 +64,5 @@ public interface ParaService {
     Page<Para> findPage(Map<String, Object> searchMap, int page, int size);
 
 
-
-
+    List<Para> findByCategoryId(Integer id);
 }

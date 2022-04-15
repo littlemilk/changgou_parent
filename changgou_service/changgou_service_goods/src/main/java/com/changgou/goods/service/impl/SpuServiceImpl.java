@@ -1,16 +1,20 @@
 package com.changgou.goods.service.impl;
 
+import com.alibaba.fastjson.JSON;
+import com.changgou.goods.dao.BrandMapper;
+import com.changgou.goods.dao.CategoryMapper;
+import com.changgou.goods.dao.SkuMapper;
 import com.changgou.goods.dao.SpuMapper;
+import com.changgou.goods.pojo.*;
 import com.changgou.goods.service.SpuService;
-import com.changgou.goods.pojo.Spu;
+import com.changgou.entity.IdWorker;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
 
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class SpuServiceImpl implements SpuService {
@@ -18,6 +22,17 @@ public class SpuServiceImpl implements SpuService {
     @Autowired
     private SpuMapper spuMapper;
 
+    @Autowired
+    private IdWorker idWorker;
+
+    @Autowired
+    private CategoryMapper categoryMapper;
+
+    @Autowired
+    private BrandMapper brandMapper;
+
+    @Autowired
+    private SkuMapper skuMapper;
     /**
      * 查询全部列表
      * @return
@@ -33,7 +48,7 @@ public class SpuServiceImpl implements SpuService {
      * @return
      */
     @Override
-    public Spu findById(String id){
+    public Spu findById(Long id){
         return  spuMapper.selectByPrimaryKey(id);
     }
 
@@ -62,7 +77,7 @@ public class SpuServiceImpl implements SpuService {
      * @param id
      */
     @Override
-    public void delete(String id){
+    public void delete(Long id){
         spuMapper.deleteByPrimaryKey(id);
     }
 
@@ -102,6 +117,130 @@ public class SpuServiceImpl implements SpuService {
         PageHelper.startPage(page,size);
         Example example = createExample(searchMap);
         return (Page<Spu>)spuMapper.selectByExample(example);
+    }
+
+    /**
+     * 根据id查找商品
+     * @param id
+     * @return
+     */
+    @Override
+    public Goods findBySpuId(Long id) {
+        Spu spu = spuMapper.selectByPrimaryKey(id);
+        Sku sku = new Sku();
+        sku.setSpuId(id);
+        List<Sku> skus = skuMapper.select(sku);
+        Goods goods = new Goods();
+        goods.setSpu(spu);
+        goods.setSkus(skus);
+        return goods;
+    }
+
+    /**
+     * 删除商品
+     * @param id
+     */
+    @Override
+    public void deleteGoods(Long id) {
+        spuMapper.deleteByPrimaryKey(id);
+        Sku sku = new Sku();
+        sku.setSpuId(id);
+        skuMapper.delete(sku);
+    }
+
+    /**
+     * 审核商品
+     * @param id
+     * @return
+     */
+    @Override
+    public void audit(Long id) {
+        Spu spu = spuMapper.selectByPrimaryKey(id);
+        if(spu.getIsDelete().equalsIgnoreCase("1")){
+            throw new  RuntimeException("不能对已删除的商品进行审核");
+        }
+        spu.setStatus("1");
+        spu.setIsMarketable("1");
+        spuMapper.updateByPrimaryKeySelective(spu);
+    }
+
+    /**
+     * 下架商品
+     * @param id
+     * @return
+     */
+    @Override
+    public void pull(Long id) {
+        Spu spu = spuMapper.selectByPrimaryKey(id);
+        if(spu.getIsDelete().equalsIgnoreCase("1")){
+            throw new  RuntimeException("不能对已删除的商品进行下架");
+        }
+        spu.setIsMarketable("0");
+        spuMapper.updateByPrimaryKeySelective(spu);
+    }
+
+    @Override
+    public void put(Long id) {
+        Spu spu = spuMapper.selectByPrimaryKey(id);
+        if(spu.getIsDelete().equalsIgnoreCase("1")){
+            throw new  RuntimeException("不能对已删除的商品进行上架");
+        }
+        spu.setIsMarketable("1");
+        spuMapper.updateByPrimaryKeySelective(spu);
+    }
+
+    @Override
+    public void putMany(Long[] ids) {
+        Example example = new Example(Spu.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andIn("id", Arrays.asList(ids));
+        criteria.andEqualTo("isDelete", "0");
+        criteria.andEqualTo("status", "1");
+
+        Spu spu = new Spu();
+        spu.setIsMarketable("1");
+        spuMapper.updateByExampleSelective(spu, example);
+
+    }
+
+    /**
+     * 保存商品
+     * @param goods
+     */
+    @Override
+    public void save(Goods goods) {
+        Spu spu = goods.getSpu();
+        if(spu.getId() == null){
+            spu.setId(idWorker.nextId());
+            spuMapper.insertSelective(spu);
+        }else {
+            spuMapper.updateByPrimaryKeySelective(spu);
+            Sku sku = new Sku();
+            sku.setSpuId(spu.getId());
+            skuMapper.delete(sku);
+        }
+        Brand brand = brandMapper.selectByPrimaryKey(spu.getBrandId());
+        Category category = categoryMapper.selectByPrimaryKey(spu.getCategory3Id());
+        List<Sku> skus = goods.getSkus();
+        for (Sku sku : skus) {
+            sku.setId(idWorker.nextId());
+
+            String name = spu.getName();
+            Map<String, String> specs = JSON.parseObject(sku.getSpec(), Map.class);
+            for(Map.Entry<String, String> entry : specs.entrySet()){
+                name += " " + entry.getValue();
+            }
+
+            sku.setName(name);
+            Date date = new Date();
+            sku.setCreateTime(date);
+            sku.setUpdateTime(date);
+            sku.setSpuId(spu.getId());
+            sku.setCategoryId(category.getId());
+            sku.setCategoryName(category.getName());
+            sku.setBrandName(brand.getName());
+            skuMapper.insertSelective(sku);
+        }
     }
 
     /**

@@ -6,14 +6,14 @@ import java.io.Serializable;
 
 /**
  * sku实体类
- * @author 黑马架构师2.5
+ * @author
  *
  */
 @Table(name="tb_sku")
 public class Sku implements Serializable {
 
 	@Id
-	private String id;//商品id
+	private Long id;//商品id
 
 
 	
@@ -27,7 +27,7 @@ public class Sku implements Serializable {
 	private Integer weight;//重量（克）
 	private java.util.Date createTime;//创建时间
 	private java.util.Date updateTime;//更新时间
-	private String spuId;//SPUID
+	private Long spuId;//SPUID
 	private Integer categoryId;//类目ID
 	private String categoryName;//类目名称
 	private String brandName;//品牌名称
@@ -37,10 +37,10 @@ public class Sku implements Serializable {
 	private String status;//商品状态 1-正常，2-下架，3-删除
 
 	
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -114,10 +114,10 @@ public class Sku implements Serializable {
 		this.updateTime = updateTime;
 	}
 
-	public String getSpuId() {
+	public Long getSpuId() {
 		return spuId;
 	}
-	public void setSpuId(String spuId) {
+	public void setSpuId(Long spuId) {
 		this.spuId = spuId;
 	}
 

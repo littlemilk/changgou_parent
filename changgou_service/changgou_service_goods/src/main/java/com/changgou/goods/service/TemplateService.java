@@ -64,6 +64,6 @@ public interface TemplateService {
     Page<Template> findPage(Map<String, Object> searchMap, int page, int size);
 
 
-
+    Template findByCategoryId(int id);
 
 }

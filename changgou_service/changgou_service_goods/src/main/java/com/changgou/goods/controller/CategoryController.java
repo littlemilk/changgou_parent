@@ -103,5 +103,15 @@ public class CategoryController {
         return new Result(true,StatusCode.OK,"查询成功",pageResult);
     }
 
+    /**
+     * 根据父id查找所有分类
+     * @param id
+     * @return
+     */
+    @GetMapping(value = "/list/{id}")
+    public Result findByParentId(@PathVariable int id){
+        List<Category> categories = categoryService.findByParentId(id);
+        return new Result(true, StatusCode.OK,"查询成功", categories);
+    }
 
 }

@@ -68,7 +68,12 @@ public interface BrandService {
      * @param categoryName
      * @return
      */
-    public List<Map> findBrandListByCategoryName(String categoryName);
+    //public List<Map> findBrandListByCategoryName(String categoryName);
 
-
+    /**
+     * 根据分类id查询品牌列表
+     * @param id
+     * @return
+     */
+    List<Map> findBrandListByCategoryId(Integer id);
 }

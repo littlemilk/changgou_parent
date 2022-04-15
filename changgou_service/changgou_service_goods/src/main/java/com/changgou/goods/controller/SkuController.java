@@ -59,7 +59,7 @@ public class SkuController {
      * @return
      */
     @PutMapping(value="/{id}")
-    public Result update(@RequestBody Sku sku,@PathVariable String id){
+    public Result update(@RequestBody Sku sku,@PathVariable Long id){
         sku.setId(id);
         skuService.update(sku);
         return new Result(true,StatusCode.OK,"修改成功");
