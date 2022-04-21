@@ -16,6 +16,7 @@
     <file url="file://$PROJECT_DIR$/changgou_gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/changgou_gateway/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/changgou_service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/changgou_service/changgou-service-canal/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/changgou_service/changgou_service_business" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/changgou_service/changgou_service_business/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/changgou_service/changgou_service_config" charset="UTF-8" />
