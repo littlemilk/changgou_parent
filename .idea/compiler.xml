@@ -6,12 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="changgou-service-search-api" />
         <module name="changgou_common_db" />
         <module name="changgou_eureka" />
         <module name="changgou_service_order_api" />
         <module name="changgou_service_config" />
         <module name="changgou_service_business_api" />
         <module name="changgou_service_user_api" />
+        <module name="changgou-service-search" />
         <module name="changgou_service_system_api" />
         <module name="changgou_service_business" />
         <module name="changgou_service_system" />
@@ -30,6 +32,8 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="changgou-service-canal" target="1.8" />
+      <module name="changgou-service-search" target="1.8" />
+      <module name="changgou-service-search-api" target="1.8" />
       <module name="changgou_canal" target="1.8" />
       <module name="changgou_common" target="1.8" />
       <module name="changgou_common_db" target="1.8" />
@@ -58,6 +62,8 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="changgou-service-canal" options="-parameters" />
+      <module name="changgou-service-search" options="-parameters" />
+      <module name="changgou-service-search-api" options="-parameters" />
       <module name="changgou_canal" options="-parameters" />
       <module name="changgou_common" options="-parameters" />
       <module name="changgou_common_db" options="-parameters" />

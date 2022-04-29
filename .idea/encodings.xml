@@ -17,6 +17,7 @@
     <file url="file://$PROJECT_DIR$/changgou_gateway/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/changgou_service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/changgou_service/changgou-service-canal/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/changgou_service/changgou-service-search/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/changgou_service/changgou_service_business" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/changgou_service/changgou_service_business/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/changgou_service/changgou_service_config" charset="UTF-8" />
@@ -34,6 +35,7 @@
     <file url="file://$PROJECT_DIR$/changgou_service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/changgou_service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/changgou_service_api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/changgou_service_api/changgou-service-search-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/changgou_service_api/changgou_service_business_api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/changgou_service_api/changgou_service_business_api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/changgou_service_api/changgou_service_config_api" charset="UTF-8" />
@@ -52,6 +54,7 @@
     <file url="file://$PROJECT_DIR$/changgou_web/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../Repository/org/springframework/boot/spring-boot-starter-parent/2.1.4.RELEASE/src/main/resources" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

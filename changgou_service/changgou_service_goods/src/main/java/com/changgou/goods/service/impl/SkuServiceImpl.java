@@ -104,6 +104,13 @@ public class SkuServiceImpl implements SkuService {
         return (Page<Sku>)skuMapper.selectByExample(example);
     }
 
+    @Override
+    public List<Sku> findByStatus(String status) {
+        Sku sku = new Sku();
+        sku.setStatus(status);
+        return skuMapper.select(sku);
+    }
+
     /**
      * 构建查询对象
      * @param searchMap
