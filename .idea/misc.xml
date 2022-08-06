@@ -5,6 +5,8 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/changgou_service/changgou_service_file/pom.xml" />
+        <option value="$PROJECT_DIR$/../../学习/6.阶段六-畅购商城/chapter09 网关鉴权-Oauth2/资源/changgou-user-oauth/pom.xml" />
+        <option value="$PROJECT_DIR$/changgou-user-oauth/pom.xml" />
       </list>
     </option>
   </component>

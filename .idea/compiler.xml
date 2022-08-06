@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="changgou-service-search-api" />
         <module name="changgou_common_db" />
+        <module name="changgou-user-oauth" />
         <module name="changgou_eureka" />
         <module name="changgou_service_order_api" />
         <module name="changgou_service_config" />
@@ -31,9 +32,10 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="changgou-service-canal" target="1.8" />
+      <module name="changgou-service-canal" target="8" />
       <module name="changgou-service-search" target="1.8" />
       <module name="changgou-service-search-api" target="1.8" />
+      <module name="changgou-user-oauth" target="1.8" />
       <module name="changgou_canal" target="1.8" />
       <module name="changgou_common" target="1.8" />
       <module name="changgou_common_db" target="1.8" />
@@ -64,6 +66,7 @@
       <module name="changgou-service-canal" options="-parameters" />
       <module name="changgou-service-search" options="-parameters" />
       <module name="changgou-service-search-api" options="-parameters" />
+      <module name="changgou-user-oauth" options="-parameters" />
       <module name="changgou_canal" options="-parameters" />
       <module name="changgou_common" options="-parameters" />
       <module name="changgou_common_db" options="-parameters" />

@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/changgou_service/changgou-service-canal/changgou-service-canal.iml" filepath="$PROJECT_DIR$/changgou_service/changgou-service-canal/changgou-service-canal.iml" />
       <module fileurl="file://$PROJECT_DIR$/changgou_service/changgou-service-search/changgou-service-search.iml" filepath="$PROJECT_DIR$/changgou_service/changgou-service-search/changgou-service-search.iml" />
       <module fileurl="file://$PROJECT_DIR$/changgou_service_api/changgou-service-search-api/changgou-service-search-api.iml" filepath="$PROJECT_DIR$/changgou_service_api/changgou-service-search-api/changgou-service-search-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/changgou-user-oauth/changgou-user-oauth.iml" filepath="$PROJECT_DIR$/changgou-user-oauth/changgou-user-oauth.iml" />
       <module fileurl="file://$PROJECT_DIR$/changgou_canal/changgou_canal.iml" filepath="$PROJECT_DIR$/changgou_canal/changgou_canal.iml" />
       <module fileurl="file://$PROJECT_DIR$/changgou_common/changgou_common.iml" filepath="$PROJECT_DIR$/changgou_common/changgou_common.iml" />
       <module fileurl="file://$PROJECT_DIR$/changgou_common_db/changgou_common_db.iml" filepath="$PROJECT_DIR$/changgou_common_db/changgou_common_db.iml" />

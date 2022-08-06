@@ -18,6 +18,7 @@
         <module>changgou_common_db</module>
 		<module>changgou_canal</module>
         <module>changgou_service/changgou-service-canal</module>
+        <module>changgou-user-oauth</module>
     </modules>
 
     <parent>
