@@ -1,0 +1,16 @@
+/Users/mac/Documents/ideaCode/changgou_parent/changgou_common/src/main/java/com/changgou/util/ChineseUtils.java
+/Users/mac/Documents/ideaCode/changgou_parent/changgou_common/src/main/java/com/changgou/util/HttpClient.java
+/Users/mac/Documents/ideaCode/changgou_parent/changgou_common/src/main/java/com/changgou/interceptor/FeignInterceptor.java
+/Users/mac/Documents/ideaCode/changgou_parent/changgou_common/src/main/java/com/changgou/util/ConvertUtils.java
+/Users/mac/Documents/ideaCode/changgou_parent/changgou_common/src/main/java/com/changgou/entity/Message.java
+/Users/mac/Documents/ideaCode/changgou_parent/changgou_common/src/main/java/com/changgou/entity/StatusCode.java
+/Users/mac/Documents/ideaCode/changgou_parent/changgou_common/src/main/java/com/changgou/entity/Result.java
+/Users/mac/Documents/ideaCode/changgou_parent/changgou_common/src/main/java/com/changgou/util/DateUtil.java
+/Users/mac/Documents/ideaCode/changgou_parent/changgou_common/src/main/java/com/changgou/util/RandomUtil.java
+/Users/mac/Documents/ideaCode/changgou_parent/changgou_common/src/main/java/com/changgou/entity/Page.java
+/Users/mac/Documents/ideaCode/changgou_parent/changgou_common/src/main/java/com/changgou/util/CacheKey.java
+/Users/mac/Documents/ideaCode/changgou_parent/changgou_common/src/main/java/com/changgou/entity/PageResult.java
+/Users/mac/Documents/ideaCode/changgou_parent/changgou_common/src/main/java/com/changgou/util/RandomValueUtil.java
+/Users/mac/Documents/ideaCode/changgou_parent/changgou_common/src/main/java/com/changgou/util/BCrypt.java
+/Users/mac/Documents/ideaCode/changgou_parent/changgou_common/src/main/java/com/changgou/framework/exception/BaseExceptionHandler.java
+/Users/mac/Documents/ideaCode/changgou_parent/changgou_common/src/main/java/com/changgou/entity/IdWorker.java

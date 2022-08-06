@@ -1,0 +1,8 @@
+com/changgou/oauth/util/CookieUtil.class
+com/changgou/oauth/util/UserJwt.class
+com/changgou/oauth/util/AuthToken.class
+com/changgou/oauth/config/WebSecurityConfig.class
+com/changgou/oauth/config/AuthorizationServerConfig.class
+com/changgou/oauth/config/UserDetailsServiceImpl.class
+com/changgou/oauth/config/CustomUserAuthenticationConverter.class
+com/changgou/OAuthApplication.class

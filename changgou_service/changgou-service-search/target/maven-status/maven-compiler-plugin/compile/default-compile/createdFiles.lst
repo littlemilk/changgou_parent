@@ -1,0 +1,5 @@
+com/changgou/controller/SkuEsController.class
+com/changgou/service/impl/SkuEsServiceImpl.class
+com/changgou/service/SkuEsService.class
+com/changgou/dao/SkuEsMapper.class
+com/changgou/SearchApplication.class
